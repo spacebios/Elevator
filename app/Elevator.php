@@ -1,11 +1,13 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: SEO-2
- * Date: 20.03.2017
- * Time: 11:00
+ * Created by Spacebios
  */
+namespace main\app;
+
+use main\app\state\UpState;
+use main\app\state\DownState;
+
 class Elevator
 {
     function __construct()

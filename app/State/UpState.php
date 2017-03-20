@@ -1,11 +1,10 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: SEO-2
- * Date: 20.03.2017
- * Time: 15:12
+ * Created by Spacebios
  */
+namespace main\app\state;
+
 class UpState implements StateInterface
 {
     public function up($elev)

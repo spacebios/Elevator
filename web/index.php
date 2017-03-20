@@ -1,7 +1,9 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: SEO-2
- * Date: 20.03.2017
- * Time: 17:22
+ * Created by Spacebios
  */
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require __DIR__ . '/../vendor/autoload.php';
