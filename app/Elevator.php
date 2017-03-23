@@ -50,6 +50,11 @@ class Elevator
         $this->state = $st;
     }
 
+    public function getState()
+    {
+        return $this->state;
+    }
+
     public function moveTo()
     {
 

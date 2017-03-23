@@ -5,24 +5,30 @@
 
 namespace main\app\state;
 
+use main\app\Elevator;
 
 class StopState implements StateInterface
 {
-    public function up($elev)
+    public function __construct()
     {
-        // Do nothing if we move UP again.
-        $elev->moveTo();
+        $this->elev = new Elevator();
     }
 
-    public function down($elev)
+    private $elev = null;
+
+    public function up()
     {
-        $elev->setState($upState);
-        $elev->moveTo();
+
     }
 
-    public function stop($elev)
+    public function down()
     {
-        // Do nothing if we move UP again.
-        $elev->moveTo();
+
+    }
+
+    public function stop()
+    {
+        $this->elev->setState($this->elev->stopState);
+        $this->elev->moveTo();
     }
 }
