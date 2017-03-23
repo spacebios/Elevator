@@ -1,13 +1,12 @@
 <?php
-
 /**
- * Created by Spacebios
+ * Created by Spacebios.
  */
+
 namespace main\app\state;
 
-use main\app\Elevator;
 
-class DownState implements StateInterface
+class StopState implements StateInterface
 {
     public function up($elev)
     {

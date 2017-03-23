@@ -18,4 +18,10 @@ class UpState implements StateInterface
         // Do nothing if we move DOWN again.
         $elev->moveTo();
     }
+
+    public function stop($elev)
+    {
+        // Do nothing if we move UP again.
+        $elev->moveTo();
+    }
 }

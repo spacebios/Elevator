@@ -14,22 +14,24 @@ class Elevator
     {
         $this->upState = new UpState();
         $this->downState = new DownState();
+        $this->stopState = new StopState();
     }
 
     private $state;
 
     public $upState;
     public $downState;
+    public $stopState;
     public $moveHeight;
 
     public function up()
     {
-        $this->upState->up($this);
+        $this->state->up($this);
     }
 
     public function down()
     {
-        $this->downState->down($this);
+        $this->state->down($this);
     }
 
     public function setState($st)
@@ -41,6 +43,4 @@ class Elevator
     {
 
     }
-
-
 }
