@@ -7,6 +7,7 @@ namespace main\app;
 
 use main\app\state\UpState;
 use main\app\state\DownState;
+use main\app\state\StopState;
 
 class Elevator
 {
@@ -15,6 +16,7 @@ class Elevator
         $this->upState = new UpState();
         $this->downState = new DownState();
         $this->stopState = new StopState();
+        $this->state = new StopState(); //default state
     }
 
     private $state;
