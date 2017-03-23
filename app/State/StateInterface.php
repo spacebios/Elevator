@@ -7,6 +7,7 @@ namespace main\app\state;
 
 interface StateInterface
 {
-    public function up($elev);
-    public function down($elev);
+    public function up();
+    public function down();
+    public function stop();
 }

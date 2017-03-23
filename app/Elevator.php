@@ -24,16 +24,25 @@ class Elevator
     public $upState;
     public $downState;
     public $stopState;
+
     public $moveHeight;
+    public $liftPosition;
+    public $isOpen = false;
+
 
     public function up()
     {
-        $this->state->up($this);
+        $this->state->up();
     }
 
     public function down()
     {
-        $this->state->down($this);
+        $this->state->down();
+    }
+
+    public function stop()
+    {
+        $this->state->stop();
     }
 
     public function setState($st)

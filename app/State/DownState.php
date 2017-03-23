@@ -1,29 +1,34 @@
 <?php
-
 /**
- * Created by Spacebios
+ * Created by Spacebios.
  */
+
 namespace main\app\state;
 
 use main\app\Elevator;
 
 class DownState implements StateInterface
 {
-    public function up($elev)
+    public function __construct()
     {
-        // Do nothing if we move UP again.
-        $elev->moveTo();
+        $this->elev = new Elevator();
     }
 
-    public function down($elev)
+    private $elev = null;
+
+    public function up()
     {
-        $elev->setState($upState);
-        $elev->moveTo();
+
     }
 
-    public function stop($elev)
+    public function down()
     {
-        // Do nothing if we move UP again.
-        $elev->moveTo();
+        $this->elev->setState($this->elev->downState);
+        $this->elev->moveTo();
+    }
+
+    public function stop()
+    {
+
     }
 }
