@@ -25,11 +25,16 @@ class Elevator
     public $downState;
     public $stopState;
 
-    public $moveHeight;
-    public $liftPosition;
+    public $moveHeight = null; // meterts
+    public $liftPosition = null; // meterts
+    public $moveDirection = null; // -1/1
+    public $moveSpeed = 1; // m/s
     public $isOpen = false;
 
+    public $moveStartTime;
+    public $moveEndTime;
 
+//Public functions
     public function up()
     {
         $this->state->up();
@@ -55,8 +60,38 @@ class Elevator
         return $this->state;
     }
 
+    public function runDoorsMechanism()
+    {
+        if(!$this->isOpen){
+            $this->isOpen = true;
+            sleep(1);
+            echo 'The doors are opened';
+        }else{
+            $this->isOpen = false;
+            sleep(1);
+            echo 'The doors are closed. Start moving...';
+        }
+    }
+
+    public function forceStop()
+    {
+        $this->moveEndTime = time();
+        $this->makeSound();
+
+    }
+
     public function moveTo()
     {
+        $this->moveStartTime = time();
+        $this->moveEndTime = $this->moveStartTime + $this->moveHeight/$this->moveSpeed;
 
+        sleep($this->moveEndTime-$this->moveStartTime);
+
+        $this->liftPosition = $this->liftPosition + $this->moveHeight * $this->moveDirection;
+    }
+
+    private function makeSound()
+    {
+        echo 'Ding-Dong';
     }
 }
