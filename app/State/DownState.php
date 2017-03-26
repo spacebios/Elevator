@@ -9,9 +9,9 @@ use main\app\Elevator;
 
 class DownState implements StateInterface
 {
-    public function __construct()
+    public function __construct($e)
     {
-        $this->elev = new Elevator();
+        $this->elev = $e;
     }
 
     private $elev = null;
