@@ -14,20 +14,25 @@ class UpState implements StateInterface
         $this->elev = $e;
     }
 
-    private $elev = null;
+/**
+* @var Elevator
+*/
+    private $elev;
 
     public function up()
     {
-        $this->elev->setState($this->elev->upState);
+
     }
 
     public function down()
     {
-
+        $this->elev->setState($this->elev->upState);
+        $this->moveStartTime = time();
     }
 
     public function stop()
     {
-
+        $this->elev->setState($this->elev->upState);
+        $this->moveStartTime = time();
     }
 }

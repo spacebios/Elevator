@@ -14,21 +14,25 @@ class DownState implements StateInterface
         $this->elev = $e;
     }
 
-    private $elev = null;
+/**
+* @var Elevator
+*/
+    private $elev;
 
     public function up()
     {
-
+        $this->elev->setState($this->elev->downState);
+        $this->moveStartTime = time();
     }
 
     public function down()
     {
-        $this->elev->setState($this->elev->downState);
-        $this->elev->moveTo();
+
     }
 
     public function stop()
     {
-
+        $this->elev->setState($this->elev->downState);
+        $this->moveStartTime = time();
     }
 }
