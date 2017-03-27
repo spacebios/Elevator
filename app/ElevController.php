@@ -8,7 +8,12 @@ namespace main\app;
 
 class ElevController
 {
-    public static $elev = Array();
+    public function __construct()
+    {
+
+    }
+
+    private static $elev = Array();
 
     public function getElevators()
     {
