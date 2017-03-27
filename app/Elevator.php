@@ -13,12 +13,15 @@ class Elevator
 {
     function __construct()
     {
+        ElevController::addElevator($this);
+
         $this->upState = new UpState($this);
         $this->downState = new DownState($this);
         $this->stopState = new StopState($this);
         $this->state = new StopState($this); //default state
     }
 
+    private $elevatorController;
     private $state;
 
     public $upState;
