@@ -13,59 +13,41 @@ class Elevator
 {
     function __construct()
     {
-//        $this->upState = new UpState($this);
-//        $this->downState = new DownState($this);
-//        $this->stopState = new StopState($this);
-//        $this->state = new StopState(); //default state
+        $this->upState = new UpState($this);
+        $this->downState = new DownState($this);
+        $this->stopState = new StopState($this);
+        $this->state = new StopState($this); //default state
     }
 
-    private $state = 'STOP';
+    private $state;
 
     public $upState;
     public $downState;
     public $stopState;
 
-    public $moveHeight = null; // meterts
-    public $liftPosition = 0; // meterts
-    public $moveDirection = null; // -1/1
-    public $moveSpeed = 1; // m/s
+    public $moveHeight; //meterts
+    public $moveDirection = null; //-1/1
     public $isOpen = false;
+
+    public $liftPosition = 0; //meterts
+    public $moveSpeed = 1; // m/s
     public $moveStartTime; //timestamp
     public $moveEndTime; //timestamp
 
 /*----------------------------------------Public functions------------------------------------------------------------*/
     public function up()
     {
-//        $this->state->up();
-        if($this->state == 'UP'){
-
-        }elseif ($this->state == 'DOWN'){
-            $this->setState('UP');
-            $this->moveStartTime = time();
-        }elseif ($this->state == 'STOP'){
-            $this->setState('UP');
-            $this->moveStartTime = time();
-        }
+        $this->state->up();
     }
 
     public function down()
     {
-//        $this->state->down();
-
+        $this->state->down();
     }
 
     public function stop()
     {
-//        $this->state->stop();
-        if($this->state == 'UP'){
-            $this->liftPosition = $this->liftPosition + (time() - $this->moveStartTime) * $this->moveSpeed;
-            $this->setState('STOP');
-        }elseif ($this->state == 'DOWN'){
-            $this->liftPosition = $this->liftPosition - (time() - $this->moveStartTime) * $this->moveSpeed;
-            $this->setState('STOP');
-        }elseif ($this->state == 'STOP'){
-
-        }
+        $this->state->stop();
     }
 
     function setState($st)
@@ -80,20 +62,13 @@ class Elevator
 
     public function getPosition()
     {
-        if($this->state == 'UP'){
-            return $this->liftPosition + (time() - $this->moveStartTime) * $this->moveSpeed;
-        }elseif ($this->state == 'DOWN'){
-            return $this->liftPosition - (time() - $this->moveStartTime) * $this->moveSpeed;
-        }elseif ($this->state == 'STOP'){
-            return $this->liftPosition;
+        if($this->state == $this->upState){
+            return $this->liftPosition + (time() - $this->moveStartTime) * $this->moveSpeed; //for UP state
+        }elseif ($this->state == $this->downState){
+            return $this->liftPosition - (time() - $this->moveStartTime) * $this->moveSpeed; //for DOWN state
+        }else{
+            return $this->liftPosition; //for STOP state
         }
-    }
-
-    public function forceStop()
-    {
-        $this->moveEndTime = time();
-        $this->makeSound();
-        $this->stop();
     }
 
     public function moveTo()
@@ -121,7 +96,7 @@ class Elevator
         }else{
             $this->isOpen = false;
             sleep(1);
-            echo 'The doors are closed. Start moving...';
+            echo 'The doors are closed.';
         }
     }
 

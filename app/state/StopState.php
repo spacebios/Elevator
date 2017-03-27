@@ -14,21 +14,25 @@ class StopState implements StateInterface
         $this->elev = $e;
     }
 
-    private $elev = null;
+/**
+* @var Elevator
+*/
+    private $elev;
 
     public function up()
     {
-
+        $this->elev->liftPosition = $this->elev->liftPosition + (time() - $this->elev->moveStartTime) * $this->elev->moveSpeed;
+        $this->elev->setState($this->elev->stopState);
     }
 
     public function down()
     {
-
+        $this->elev->liftPosition = $this->elev->liftPosition + (time() - $this->elev->moveStartTime) * $this->elev->moveSpeed;
+        $this->elev->setState($this->elev->stopState);
     }
 
     public function stop()
     {
-        $this->elev->setState($this->elev->stopState);
-        $this->elev->moveTo();
+
     }
 }
