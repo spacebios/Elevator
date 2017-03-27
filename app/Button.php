@@ -21,7 +21,6 @@ class Button
     public $stopBtnBeh;
     public $numBtnBeh;
 
-
     public function setBehavior($beh)
     {
         $this->behavior = $beh;

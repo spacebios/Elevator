@@ -21,7 +21,6 @@ class Elevator
         $this->state = new StopState($this); //default state
     }
 
-    private $elevatorController;
     private $state;
 
     public $upState;
@@ -72,16 +71,6 @@ class Elevator
         }else{
             return $this->liftPosition; //for STOP state
         }
-    }
-
-    public function moveTo()
-    {
-        $this->moveStartTime = time();  //set move start time
-        $this->moveEndTime = $this->moveStartTime + $this->moveHeight/$this->moveSpeed;  //set move end time
-
-        sleep($this->moveEndTime-$this->moveStartTime);  //wait until the elevator moves
-        $this->liftPosition = $this->liftPosition + $this->moveHeight * $this->moveDirection; //change lift position
-        $this->liftLanding(); //landing passengers
     }
 
 /*----------------------------------------Private functions-----------------------------------------------------------*/
