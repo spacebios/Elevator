@@ -7,16 +7,28 @@ namespace main\app\state;
 
 use main\app\Elevator;
 
+
+/**
+ * Class UpState
+ * @package main\app\state
+ *
+ * @property Elevator $elev
+ */
 class UpState implements StateInterface
 {
+
+    /**
+     * UpState constructor.
+     * @param $e Elevator
+     */
     public function __construct($e)
     {
         $this->elev = $e;
     }
 
-/**
-* @var Elevator
-*/
+    /**
+     * @var UpState
+     */
     private $elev;
 
     public function up()

@@ -14,9 +14,9 @@ class DownState implements StateInterface
         $this->elev = $e;
     }
 
-/**
-* @var Elevator
-*/
+    /**
+    * @var Elevator
+    */
     private $elev;
 
     public function up()
