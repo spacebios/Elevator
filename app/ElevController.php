@@ -14,6 +14,7 @@ class ElevController
     }
 
     private static $elev = Array();
+    private $moveDirection; //-1/1
 
     public function getElevators()
     {
@@ -25,13 +26,21 @@ class ElevController
         array_push(self::$elev, $e);
     }
 
-    public function moveTo()
+    public function visit($h)
     {
-        $this->moveStartTime = time();  //set move start time
-        $this->moveEndTime = $this->moveStartTime + $this->moveHeight/$this->moveSpeed;  //set move end time
+        foreach(self::$elev as $el){
 
-        sleep($this->moveEndTime-$this->moveStartTime);  //wait until the elevator moves
-        $this->liftPosition = $this->liftPosition + $this->moveHeight * $this->moveDirection; //change lift position
-        $this->liftLanding(); //landing passengers
+            if($el->liftPosition > $h){
+                $this->moveDirection = 1;
+            } else {
+                $this->moveDirection = -1;
+            }
+
+            $el->moveStartTime = time(); //set move start time
+            $el->moveEndTime = $el->moveStartTime + $el->moveHeight * $el->moveSpeed; //set move end time
+            sleep($el->moveEndTime - $el->moveStartTime);  //wait until the elevator moves
+            $el->liftPosition = $el->liftPosition + $h * $this->moveDirection; //change lift position
+            $el->liftLanding(); //landing passengers
+        }
     }
 }

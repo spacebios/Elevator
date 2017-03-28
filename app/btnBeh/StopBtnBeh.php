@@ -15,9 +15,9 @@ class StopBtnBeh implements BtnBehInterface
         $this->btn = $b;
     }
 
-/**
-* @var Button
-*/
+    /**
+    * @var Button
+    */
     private $btn;
 
     public function execute()

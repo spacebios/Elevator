@@ -9,8 +9,16 @@ use main\app\state\UpState;
 use main\app\state\DownState;
 use main\app\state\StopState;
 
+/**
+ * Class Elevator
+ * @package main\app
+ */
+
 class Elevator
 {
+    /**
+     * Elevator constructor.
+     */
     function __construct()
     {
         ElevController::addElevator($this);
@@ -21,20 +29,54 @@ class Elevator
         $this->state = new StopState($this); //default state
     }
 
+    /**
+     * @var StopState as default
+     */
     private $state;
 
+    /**
+     * @var bool
+     */
+    private $isOpen = false;
+
+    /**
+     * @var UpState
+     */
     public $upState;
+
+    /**
+     * @var DownState
+     */
     public $downState;
+
+    /**
+     * @var StopState
+     */
     public $stopState;
 
-    public $moveHeight; //meterts
-    public $moveDirection = null; //-1/1
-    public $isOpen = false;
+    /**
+     * @var int
+     ***meterts***
+     */
+    public $liftPosition = 0;
 
-    public $liftPosition = 0; //meterts
-    public $moveSpeed = 1; // m/s
-    public $moveStartTime; //timestamp
-    public $moveEndTime; //timestamp
+    /**
+     * @var int
+     ***m/s***
+     */
+    public $moveSpeed = 1;
+
+    /**
+     * @var int
+     ***timestamp***
+     */
+    public $moveStartTime;
+
+    /**
+     * @var int
+     ***timestamp***
+     */
+    public $moveEndTime;
 
 /*----------------------------------------Public functions------------------------------------------------------------*/
     public function up()
@@ -52,16 +94,25 @@ class Elevator
         $this->state->stop();
     }
 
-    function setState($st)
+    /**
+     * @param $st object
+     */
+    public function setState($st)
     {
         $this->state = $st;
     }
 
+    /**
+     * @return object
+     */
     public function getState()
     {
         return $this->state;
     }
 
+    /**
+     * @return int
+     */
     public function getPosition()
     {
         if($this->state == $this->upState){
@@ -71,6 +122,14 @@ class Elevator
         }else{
             return $this->liftPosition; //for STOP state
         }
+    }
+
+    public function liftLanding()
+    {
+        $this->makeSound(); //"ding-dong" sound when lift is already came
+        $this->runDoorsMechanism(); //open lift
+        sleep(3); //waiting for passengers
+        $this->runDoorsMechanism(); //close lift
     }
 
 /*----------------------------------------Private functions-----------------------------------------------------------*/
@@ -90,13 +149,5 @@ class Elevator
             sleep(1);
             echo 'The doors are closed.';
         }
-    }
-
-    private function liftLanding()
-    {
-        $this->makeSound(); //"ding-dong" sound when lift is already came
-        $this->runDoorsMechanism(); //open lift
-        sleep(5); //waiting for passengers
-        $this->runDoorsMechanism(); //close lift
     }
 }
