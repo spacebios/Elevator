@@ -17,11 +17,6 @@ class ElevController
     private static $elev = Array();
 
     /**
-     * @var int
-     */
-    private $moveDirection; //-1/1
-
-    /**
      * @return array of objects
      */
     public function getElevators()
@@ -54,6 +49,13 @@ class ElevController
             sleep($el->moveEndTime - $el->moveStartTime);  //wait until the elevator moves
             $el->stop(); //stop lift on require height($h)
             $el->liftLanding(); //landing passengers
+        }
+    }
+
+    public function stop()
+    {
+        foreach(self::$elev as $el){
+            $el->stop();
         }
     }
 }
