@@ -10,7 +10,11 @@ use main\app\btnBeh\StopBtnBeh;
 
 class Button
 {
-    public function __construct($h = false)
+    /**
+     * Button constructor.
+     * @param int $h null as default
+     */
+    public function __construct($h = null)
     {
         $this->height = $h;
         $this->stopBtnBeh = new StopBtnBeh($this);
@@ -24,7 +28,7 @@ class Button
     private $behavior;
 
     /**
-     * @var int, false as default
+     * @var int, null as default
      */
     private $height;
 
@@ -48,11 +52,10 @@ class Button
 
     public function press()
     {
-        if($this->behavior == $this->numBtnBeh && $this->height != false){
+        if($this->behavior == $this->numBtnBeh && $this->height != null){
             return $this->height;
-        } elseif($this->behavior == $this->stopBtnBeh && $this->height == false){
+        } elseif($this->behavior == $this->stopBtnBeh && $this->height == null){
 
         }
-
     }
 }
