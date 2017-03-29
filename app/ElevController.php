@@ -41,7 +41,7 @@ class ElevController
 
             if($el->getPosition() > $h){
                 $el->up();
-            } else {
+            }else{
                 $el->down();
             }
 

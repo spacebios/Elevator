@@ -36,6 +36,6 @@ class StopBtnBeh implements BtnBehInterface
 
     public function execute()
     {
-
+        $this->controller->stop();
     }
 }

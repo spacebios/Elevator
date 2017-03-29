@@ -7,8 +7,16 @@ namespace main\app\state;
 
 use main\app\Elevator;
 
+/**
+ * Class DownState
+ * @package main\app\state
+ */
 class DownState implements StateInterface
 {
+    /**
+     * DownState constructor.
+     * @param $e Elevator
+     */
     public function __construct($e)
     {
         $this->elev = $e;
@@ -18,6 +26,7 @@ class DownState implements StateInterface
     * @var Elevator
     */
     private $elev;
+
 
     public function up()
     {

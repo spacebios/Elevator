@@ -40,6 +40,11 @@ class Elevator
     private $isOpen = false;
 
     /**
+     * @var bool
+     */
+    public $isbisy = false;
+
+    /**
      * @var UpState
      */
     public $upState;

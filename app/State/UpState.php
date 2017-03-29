@@ -7,7 +7,6 @@ namespace main\app\state;
 
 use main\app\Elevator;
 
-
 /**
  * Class UpState
  * @package main\app\state
@@ -30,6 +29,7 @@ class UpState implements StateInterface
      * @var UpState
      */
     private $elev;
+
 
     public function up()
     {
