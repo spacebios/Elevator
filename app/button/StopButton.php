@@ -5,6 +5,8 @@
 
 namespace main\app\button;
 
+use main\app\ElevController;
+
 /**
  * Class StopButton
  * @package main\app\button
@@ -24,6 +26,14 @@ class StopButton implements ButtonInterface
      * @var ElevController
      */
     private $controller;
+
+    /**
+     * @param $e object
+     */
+    public function setController($e)
+    {
+        $this->controller = $e;
+    }
 
     public function press()
     {

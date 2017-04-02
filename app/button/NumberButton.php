@@ -5,6 +5,8 @@
 
 namespace main\app\button;
 
+use main\app\ElevController;
+
 /**
  * Class NumberButton
  * @package main\app\button
@@ -12,16 +14,16 @@ namespace main\app\button;
 class NumberButton implements ButtonInterface
 {
     /**
-     * NumBtn constructor.
-     * @param int $h, default null
+     * NumberButton constructor.
+     * @param int $h
      */
-    public function __construct($h = null)
+    public function __construct($h)
     {
         $this->height = $h;
     }
 
     /**
-     * @var int, null as default
+     * @var int
      */
     private $height;
 
@@ -30,8 +32,16 @@ class NumberButton implements ButtonInterface
      */
     private $controller;
 
+    /**
+     * @param $e object
+     */
+    public function setController($e)
+    {
+        $this->controller = $e;
+    }
+
     public function press()
     {
-
+        $this->controller->getElevator()->stop();
     }
 }

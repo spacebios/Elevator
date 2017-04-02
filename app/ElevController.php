@@ -12,12 +12,12 @@ namespace main\app;
 class ElevController implements ElevControllerInterface
 {
     /**
-     * @var array of objects
+     * @var Elevator
      */
     private $elev;
 
     /**
-     * @return array of objects
+     * @return Elevator
      */
     public function getElevator()
     {
@@ -37,25 +37,23 @@ class ElevController implements ElevControllerInterface
      */
     public function visit($h)
     {
-        foreach($this->elev as $el){
+        $this->elev->isbusy = true; //set status 'busy'
 
-            if($el->getPosition() > $h){
-                $el->up();
-            }else{
-                $el->down();
-            }
-
-            $el->moveEndTime = $el->moveStartTime + $h * $el->moveSpeed; //set move end time
-            sleep($el->moveEndTime - $el->moveStartTime);  //wait until the elevator moves
-            $el->stop(); //stop lift on require height($h)
-            $el->liftLanding(); //landing passengers
+        if($this->elev->getPosition() > $h){
+            $this->elev->up();
+        }else{
+            $this->elev->down();
         }
+
+        $this->elev->moveEndTime = $this->elev->moveStartTime + $h * $this->elev->moveSpeed; //set move end time
+            sleep($this->elev->moveEndTime - $this->elev->moveStartTime);  //wait until the elevator moves
+        $this->elev->stop(); //stop lift on require height($h)
+        $this->elev->liftLanding(); //landing passengers
+        $this->elev->isbisy = false; //set status 'vacant'
     }
 
     public function stop()
     {
-        foreach($this->elev as $el){
-            $el->stop();
-        }
+        $this->elev->stop();
     }
 }

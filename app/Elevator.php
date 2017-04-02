@@ -40,7 +40,7 @@ class Elevator
     /**
      * @var bool
      */
-    public $isbisy = false;
+    public $isbusy = false;
 
     /**
      * @var UpState
