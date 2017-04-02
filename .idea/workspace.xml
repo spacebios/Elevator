@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77851146-282b-471c-9b5a-01889a35eccd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/ElevatorProperty.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/ElevController.php" afterPath="$PROJECT_DIR$/app/ElevController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Elevator.php" afterPath="$PROJECT_DIR$/app/Elevator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/button/NumberButton.php" afterPath="$PROJECT_DIR$/app/button/NumberButton.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/button/StopButton.php" afterPath="$PROJECT_DIR$/app/button/StopButton.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/elevatorState/DownState.php" afterPath="$PROJECT_DIR$/app/elevatorState/DownState.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/elevatorState/StopState.php" afterPath="$PROJECT_DIR$/app/elevatorState/StopState.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/elevatorState/UpState.php" afterPath="$PROJECT_DIR$/app/elevatorState/UpState.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.php" afterPath="$PROJECT_DIR$/web/index.php" />
     </list>
     <ignored path="Elevator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -401,7 +392,7 @@
       <workItem from="1490525382170" duration="3581000" />
       <workItem from="1490530146790" duration="12134000" />
       <workItem from="1491126542798" duration="7599000" />
-      <workItem from="1491136298977" duration="12661000" />
+      <workItem from="1491136298977" duration="12671000" />
     </task>
     <task id="LOCAL-00001" summary="some changes">
       <created>1490287325776</created>
@@ -473,11 +464,18 @@
       <option name="project" value="LOCAL" />
       <updated>1491139773184</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Refactor">
+      <created>1491153061430</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1491153061430</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41025000" />
+    <option name="totallyTimeSpent" value="41035000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
