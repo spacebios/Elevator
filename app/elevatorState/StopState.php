@@ -31,14 +31,14 @@ class StopState implements StateInterface
 
     public function up()
     {
-        $this->elev->liftPosition = $this->elev->liftPosition + (time() - $this->elev->moveStartTime) * $this->elev->moveSpeed;
-        $this->elev->setState($this->elev->stopState);
+        $this->elev->setMoveStartTime(time());
+        $this->elev->setState($this->elev->getUpState());
     }
 
     public function down()
     {
-        $this->elev->liftPosition = $this->elev->liftPosition + (time() - $this->elev->moveStartTime) * $this->elev->moveSpeed;
-        $this->elev->setState($this->elev->stopState);
+        $this->elev->setMoveStartTime(time());
+        $this->elev->setState($this->elev->getDownState());
     }
 
     public function stop()

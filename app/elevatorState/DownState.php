@@ -31,8 +31,8 @@ class DownState implements StateInterface
 
     public function up()
     {
-        $this->elev->setState($this->elev->downState);
-        $this->moveStartTime = time();
+        $this->stop();
+        $this->elev->getState()->up();
     }
 
     public function down()
@@ -42,7 +42,7 @@ class DownState implements StateInterface
 
     public function stop()
     {
-        $this->elev->setState($this->elev->downState);
-        $this->moveStartTime = time();
+        $this->elev->setState($this->elev->getStopState());
+        $this->elev->setLiftPosition($this->elev->getLiftPosition() - (time() - $this->elev->getMoveStartTime()) * $this->elev->getMoveSpeed());
     }
 }

@@ -17,6 +17,9 @@ $lift->up();
 echo $lift->getPosition() . "\n";
 sleep(2);
 
-$lift->stop();
+echo $lift->getPosition() . "\n";
 
+$lift->down();
+
+sleep(4);
 echo $lift->getPosition() . "\n";

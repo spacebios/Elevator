@@ -38,48 +38,36 @@ class Elevator
     private $isOpen = false;
 
     /**
-     * @var bool
+     * @var int
      */
-    public $isbusy = false;
+    private $moveStartTime;
 
     /**
      * @var UpState
      */
-    public $upState;
+    private $upState;
 
     /**
      * @var DownState
      */
-    public $downState;
+    private $downState;
 
     /**
      * @var StopState
      */
-    public $stopState;
+    private $stopState;
 
     /**
      * @var int
      ***meterts***
      */
-    public $liftPosition = 0;
+    private $liftPosition = 0;
 
     /**
      * @var int
      ***m/s***
      */
-    public $moveSpeed = 1;
-
-    /**
-     * @var int
-     ***timestamp***
-     */
-    public $moveStartTime;
-
-    /**
-     * @var int
-     ***timestamp***
-     */
-    public $moveEndTime;
+    private $moveSpeed = 1;
 
 /*----------------------------------------Public functions------------------------------------------------------------*/
     public function up()
@@ -112,6 +100,47 @@ class Elevator
     {
         return $this->state;
     }
+
+    public function getUpState()
+    {
+        return $this->upState;
+    }
+
+    public function getDownState()
+    {
+        return $this->downState;
+    }
+
+    public function getStopState()
+    {
+        return $this->stopState;
+    }
+
+    public function setMoveStartTime($t)
+    {
+        $this->moveStartTime = $t;
+    }
+
+    public function getMoveStartTime()
+    {
+       return $this->moveStartTime;
+    }
+
+    public function setLiftPosition($p)
+    {
+        $this->liftPosition = $p;
+    }
+
+    public function getLiftPosition()
+    {
+        return $this->liftPosition;
+    }
+
+    public function getMoveSpeed()
+    {
+        return $this->moveSpeed;
+    }
+
 
     /**
      * @return int

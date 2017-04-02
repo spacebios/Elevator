@@ -16,7 +16,6 @@ use main\app\Elevator;
  */
 class UpState implements StateInterface
 {
-
     /**
      * UpState constructor.
      * @param $e Elevator
@@ -31,7 +30,6 @@ class UpState implements StateInterface
      */
     private $elev;
 
-
     public function up()
     {
 
@@ -39,13 +37,13 @@ class UpState implements StateInterface
 
     public function down()
     {
-        $this->elev->setState($this->elev->upState);
-        $this->moveStartTime = time();
+        $this->stop();
+        $this->elev->getState()->down();
     }
 
     public function stop()
     {
-        $this->elev->setState($this->elev->upState);
-        $this->moveStartTime = time();
+        $this->elev->setState($this->elev->getStopState());
+        $this->elev->setLiftPosition($this->elev->getLiftPosition() + (time() - $this->elev->getMoveStartTime()) * $this->elev->getMoveSpeed());
     }
 }
