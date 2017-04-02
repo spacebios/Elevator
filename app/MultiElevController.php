@@ -1,20 +1,25 @@
 <?php
 /**
- * Created by Spacebios.
+ * Created by PhpStorm.
+ * User: Mashka
+ * Date: 02.04.2017
+ * Time: 15:13
  */
 
 namespace main\app;
 
-/**
- * Class ElevController
- * @package main\app
- */
-class ElevController implements ElevControllerInterface
+
+class MultiElevController implements ElevControllerInterface
 {
     /**
      * @var array of objects
      */
-    private $elev;
+    private $controller = Array();
+
+    public function addController($e)
+    {
+        array_push($this->controller, $e);
+    }
 
     /**
      * @return array of objects
@@ -22,14 +27,6 @@ class ElevController implements ElevControllerInterface
     public function getElevator()
     {
         return $this->elev;
-    }
-
-    /**
-     * @param $e Elevator
-     */
-    public function setElevator($e)
-    {
-        $this->elev = $e;
     }
 
     /**
@@ -54,8 +51,6 @@ class ElevController implements ElevControllerInterface
 
     public function stop()
     {
-        foreach($this->elev as $el){
-            $el->stop();
-        }
+
     }
 }

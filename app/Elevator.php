@@ -5,9 +5,9 @@
  */
 namespace main\app;
 
-use main\app\state\UpState;
-use main\app\state\DownState;
-use main\app\state\StopState;
+use main\app\elevatorState\UpState;
+use main\app\elevatorState\DownState;
+use main\app\elevatorState\StopState;
 
 /**
  * Class Elevator
@@ -21,8 +21,6 @@ class Elevator
      */
     function __construct()
     {
-        ElevController::addElevator($this);
-
         $this->upState = new UpState($this);
         $this->downState = new DownState($this);
         $this->stopState = new StopState($this);
