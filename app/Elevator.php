@@ -167,7 +167,7 @@ class Elevator
 /*----------------------------------------Private functions-----------------------------------------------------------*/
     private function makeSound()
     {
-        echo 'Ding-Dong';
+        echo 'Ding-Dong'."\n";
     }
 
     private function runDoorsMechanism()
@@ -175,11 +175,11 @@ class Elevator
         if(!$this->isOpen){
             $this->isOpen = true;
             sleep(1);
-            echo 'The doors are opened';
+            echo 'The doors are opened'."\n";
         }else{
             $this->isOpen = false;
             sleep(1);
-            echo 'The doors are closed.';
+            echo 'The doors are closed'."\n";
         }
     }
 }

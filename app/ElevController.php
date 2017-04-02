@@ -17,6 +17,11 @@ class ElevController implements ElevControllerInterface
     private $elev;
 
     /**
+     * @var ElevatorProperty
+     */
+    private $property;
+
+    /**
      * @return Elevator
      */
     public function getElevator()
@@ -30,6 +35,7 @@ class ElevController implements ElevControllerInterface
     public function setElevator($e)
     {
         $this->elev = $e;
+        $this->property = new ElevatorProperty();
     }
 
     /**
@@ -37,21 +43,26 @@ class ElevController implements ElevControllerInterface
      */
     public function visit($h)
     {
-        $this->elevProp->isbusy = true; //set status 'busy'
-
-        if($this->elev->getPosition() > $h){
-            $this->elev->up();
-            $delta = $this->elev->getPosition() - $h;
-        }else{
-            $this->elev->down();
-            $delta = $h - $this->elev->getPosition();
+        echo 'i`m in visit metod'."\n";
+        if($this->property->getIsBusy()) {
+            return;
         }
 
-        $timeout = $delta / $this->elev->moveSpeed; //set move end time
+        $this->property->setIsBusy(true); //set status 'busy'
+
+        if($this->elev->getPosition() < $h){
+            $this->elev->up();
+            $delta = $h - $this->elev->getPosition();
+        }else{
+            $this->elev->down();
+            $delta = $this->elev->getPosition() - $h;
+        }
+
+        $timeout = $delta / $this->elev->getMoveSpeed(); //set move end time
         sleep($timeout);  //wait until the elevator moves
         $this->elev->stop(); //stop lift on require height($h)
         $this->elev->liftLanding(); //landing passengers
-        $this->elevProp->isbisy = false; //set status 'vacant'
+        $this->property->setIsBusy(false); //set status 'vacant'
     }
 
     public function stop()

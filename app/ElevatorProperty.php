@@ -11,9 +11,7 @@ namespace main\app;
 
 class ElevatorProperty
 {
-    private $isbusy;
-
-    private $moveStartTime;
+    private $isbusy = false;
 
     public function setIsBusy($bool)
     {
@@ -23,15 +21,5 @@ class ElevatorProperty
     public function getIsBusy()
     {
         return $this->isbusy;
-    }
-
-    public function setMoveStartTime($t)
-    {
-        $this->moveStartTime = $t;
-    }
-
-    public function getMoveStartTime()
-    {
-        return $this->moveStartTime;
     }
 }
