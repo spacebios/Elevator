@@ -1,7 +1,4 @@
 <?php
-/**
- * Created by Spacebios.
- */
 
 namespace main\app\button;
 

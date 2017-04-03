@@ -1,7 +1,4 @@
 <?php
-/**
- * Created by Spacebios.
- */
 
 namespace main\app\elevatorState;
 
@@ -10,7 +7,7 @@ use main\app\Elevator;
 
 /**
  * Class DownState
- * @package main\app\state
+ * @package main\app\elevatorState
  */
 class DownState implements StateInterface
 {

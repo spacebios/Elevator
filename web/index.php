@@ -1,7 +1,5 @@
 <?php
-/**
- * Created by Spacebios
- */
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -21,11 +19,11 @@ $numbtn2 = new NumberButton(9, $ctrl);
 $numbtn3 = new NumberButton(12, $ctrl);
 
 $numbtn1->press();
-echo $lift->getPosition() . "\n";
+
+$numbtn3->press();
 
 $numbtn2->press();
 
-echo $lift->getPosition() . "\n";
 //
 //$ctrl->visit(6);
 //

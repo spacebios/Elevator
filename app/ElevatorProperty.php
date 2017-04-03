@@ -1,23 +1,29 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Mashka
- * Date: 02.04.2017
- * Time: 18:47
- */
 
 namespace main\app;
 
-
+/**
+ * Class ElevatorProperty
+ * @package main\app
+ */
 class ElevatorProperty
 {
+    /**
+     * @var bool
+     */
     private $isbusy = false;
 
+    /**
+     * @param $bool
+     */
     public function setIsBusy($bool)
     {
         $this->isbusy = $bool;
     }
 
+    /**
+     * @return bool
+     */
     public function getIsBusy()
     {
         return $this->isbusy;

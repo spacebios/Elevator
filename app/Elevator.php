@@ -1,8 +1,5 @@
 <?php
 
-/**
- * Created by Spacebios
- */
 namespace main\app;
 
 use main\app\elevatorState\UpState;
@@ -38,7 +35,7 @@ class Elevator
     private $isOpen = false;
 
     /**
-     * @var int
+     * @var int (timestamp)
      */
     private $moveStartTime;
 
@@ -58,13 +55,13 @@ class Elevator
     private $stopState;
 
     /**
-     * @var int
+     * @var float
      ***meterts***
      */
     private $liftPosition = 0;
 
     /**
-     * @var int
+     * @var float
      ***m/s***
      */
     private $moveSpeed = 1;
@@ -101,49 +98,72 @@ class Elevator
         return $this->state;
     }
 
+    /**
+     * @return UpState
+     */
     public function getUpState()
     {
         return $this->upState;
     }
 
+    /**
+     * @return DownState
+     */
     public function getDownState()
     {
         return $this->downState;
     }
 
+    /**
+     * @return StopState
+     */
     public function getStopState()
     {
         return $this->stopState;
     }
 
+    /**
+     * @param $t int
+     */
     public function setMoveStartTime($t)
     {
         $this->moveStartTime = $t;
     }
 
+    /**
+     * @return int (timestamp)
+     */
     public function getMoveStartTime()
     {
        return $this->moveStartTime;
     }
 
+    /**
+     * @param $p float
+     */
     public function setLiftPosition($p)
     {
         $this->liftPosition = $p;
     }
 
+    /**
+     * @return float
+     */
     public function getLiftPosition()
     {
         return $this->liftPosition;
     }
 
+    /**
+     * @return float
+     */
     public function getMoveSpeed()
     {
         return $this->moveSpeed;
     }
 
-
     /**
-     * @return int
+     * @return float
      */
     public function getPosition()
     {
@@ -159,7 +179,10 @@ class Elevator
     public function liftLanding()
     {
         $this->makeSound(); //"ding-dong" sound when lift is already came
+        sleep(0.5);
+        echo "Elevator already came...\n";
         $this->runDoorsMechanism(); //open lift
+        echo "Landing passangers...\n";
         sleep(3); //waiting for passengers
         $this->runDoorsMechanism(); //close lift
     }
@@ -167,7 +190,7 @@ class Elevator
 /*----------------------------------------Private functions-----------------------------------------------------------*/
     private function makeSound()
     {
-        echo 'Ding-Dong'."\n";
+        echo "Ding-Dong \n";
     }
 
     private function runDoorsMechanism()
@@ -175,11 +198,11 @@ class Elevator
         if(!$this->isOpen){
             $this->isOpen = true;
             sleep(1);
-            echo 'The doors are opened'."\n";
+            echo "The doors are opened \n";
         }else{
             $this->isOpen = false;
             sleep(1);
-            echo 'The doors are closed'."\n";
+            echo "The doors are closed \n";
         }
     }
 }

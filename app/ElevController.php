@@ -1,7 +1,4 @@
 <?php
-/**
- * Created by Spacebios.
- */
 
 namespace main\app;
 
@@ -39,22 +36,24 @@ class ElevController implements ElevControllerInterface
     }
 
     /**
-     * @param $h int
+     * @param $h float
      */
     public function visit($h)
     {
-        echo 'i`m in visit metod'."\n";
         if($this->property->getIsBusy()) {
             return;
         }
 
+        echo 'Elevator is on heigt: ' . $this->elev->getLiftPosition() . "\n";
         $this->property->setIsBusy(true); //set status 'busy'
 
         if($this->elev->getPosition() < $h){
             $this->elev->up();
+            echo "Elevator moves UP to height: " . $h . "\n";
             $delta = $h - $this->elev->getPosition();
         }else{
             $this->elev->down();
+            echo "Elevator moves DOWN to height: " . $h . "\n";
             $delta = $this->elev->getPosition() - $h;
         }
 
