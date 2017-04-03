@@ -1,12 +1,13 @@
 <?php
 
-namespace main\app;
+namespace main\app\elevatorController;
 
+use main\app\Elevator;
 /**
- * Class ElevController
- * @package main\app
+ * Class ElevatorController
+ * @package main\app\elevatorController
  */
-class ElevController implements ElevControllerInterface
+class ElevatorController implements ElevatorControllerInterface
 {
     /**
      * @var Elevator
@@ -14,7 +15,7 @@ class ElevController implements ElevControllerInterface
     private $elev;
 
     /**
-     * @var ElevatorProperty
+     * @var ElevatorControllerProperty
      */
     private $property;
 
@@ -32,7 +33,7 @@ class ElevController implements ElevControllerInterface
     public function setElevator($e)
     {
         $this->elev = $e;
-        $this->property = new ElevatorProperty();
+        $this->property = new ElevatorControllerProperty();
     }
 
     /**

@@ -2,7 +2,7 @@
 
 namespace main\app\button;
 
-use main\app\ElevController;
+use main\app\elevatorController\ElevatorController;
 
 /**
  * Class NumberButton
@@ -26,7 +26,7 @@ class NumberButton implements ButtonInterface
     private $height;
 
     /**
-     * @var ElevController
+     * @var ElevatorController
      */
     private $controller;
 

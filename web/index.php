@@ -6,13 +6,13 @@ error_reporting(E_ALL);
 
 use \main\app\button\NumberButton;
 use \main\app\Elevator;
-use \main\app\ElevController;
+use \main\app\elevatorController\ElevatorController;
 
 require __DIR__ . '/../vendor/autoload.php';
 
 
 $lift = new Elevator();
-$ctrl = new ElevController();
+$ctrl = new ElevatorController();
 $ctrl->setElevator($lift);
 $numbtn1 = new NumberButton(5, $ctrl);
 $numbtn2 = new NumberButton(9, $ctrl);

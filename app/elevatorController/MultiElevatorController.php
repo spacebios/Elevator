@@ -1,9 +1,12 @@
 <?php
 
-namespace main\app;
+namespace main\app\elevatorController;
 
-
-class MultiElevController implements ElevControllerInterface
+/**
+ * Class MultiElevController
+ * @package main\app\elevatorController
+ */
+class MultiElevController implements ElevatorControllerInterface
 {
     /**
      * @var array of objects

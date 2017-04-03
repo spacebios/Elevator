@@ -1,12 +1,12 @@
 <?php
 
-namespace main\app;
+namespace main\app\elevatorController;
 
 /**
- * Class ElevatorProperty
- * @package main\app
+ * Class ElevatorControllerProperty
+ * @package main\app\elevatorController
  */
-class ElevatorProperty
+class ElevatorControllerProperty
 {
     /**
      * @var bool

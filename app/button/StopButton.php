@@ -2,7 +2,7 @@
 
 namespace main\app\button;
 
-use main\app\ElevController;
+use main\app\elevatorController\ElevatorController;
 
 /**
  * Class StopButton
@@ -20,7 +20,7 @@ class StopButton implements ButtonInterface
     }
 
     /**
-     * @var ElevController
+     * @var ElevatorController
      */
     private $controller;
 
