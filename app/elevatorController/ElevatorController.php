@@ -61,7 +61,7 @@ class ElevatorController implements ElevatorControllerInterface
         }
 
         $timeout = $delta / $this->elev->getMoveSpeed(); //set move end time
-        sleep($timeout);  //wait until the elevator moves
+        sleep((int)$timeout);  //wait until the elevator moves
         $this->elev->stop(); //stop lift on require height($h)
         $this->elev->liftLanding(); //landing passengers
         $this->property->setIsBusy(false); //set status 'vacant'

@@ -179,7 +179,7 @@ class Elevator
     public function liftLanding()
     {
         $this->makeSound(); //"ding-dong" sound when lift is already came
-        sleep(0.5);
+        sleep(1);
         echo "Elevator already came...\n";
         $this->runDoorsMechanism(); //open lift
         echo "Landing passangers...\n";

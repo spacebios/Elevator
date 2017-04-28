@@ -10,7 +10,7 @@ namespace main\app\elevatorController;
  */
 interface ElevatorControllerInterface
 {
-    public function visit( float $h);
+    public function visit(float $h);
     public function stop();
     public function getElevator();
 }
