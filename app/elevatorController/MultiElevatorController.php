@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace main\app\elevatorController;
 
 /**
@@ -14,9 +16,9 @@ class MultiElevController implements ElevatorControllerInterface
     private $controller = Array();
 
     /**
-     * @param $e object
+     * @param $e ElevatorControllerInterface
      */
-    public function addController($e)
+    public function addController(ElevatorControllerInterface $e)
     {
         array_push($this->controller, $e);
     }
@@ -32,7 +34,7 @@ class MultiElevController implements ElevatorControllerInterface
     /**
      * @param $h float
      */
-    public function visit($h)
+    public function visit(float $h)
     {
 
     }

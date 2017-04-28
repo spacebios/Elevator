@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace main\app\button;
 
-use main\app\elevatorController\ElevatorController;
+use main\app\elevatorController\ElevatorControllerInterface;
 
 /**
  * Class NumberButton
@@ -12,9 +14,10 @@ class NumberButton implements ButtonInterface
 {
     /**
      * NumberButton constructor.
-     * @param int $h
+     * @param float $h
+     * @param ElevatorControllerInterface $c
      */
-    public function __construct($h, $c)
+    public function __construct(float $h, ElevatorControllerInterface $c)
     {
         $this->height = $h;
         $this->controller = $c;
@@ -26,7 +29,7 @@ class NumberButton implements ButtonInterface
     private $height;
 
     /**
-     * @var ElevatorController
+     * @var ElevatorControllerInterface
      */
     private $controller;
 

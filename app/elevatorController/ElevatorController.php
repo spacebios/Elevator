@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace main\app\elevatorController;
 
 use main\app\Elevator;
@@ -39,7 +41,7 @@ class ElevatorController implements ElevatorControllerInterface
     /**
      * @param $h float
      */
-    public function visit($h)
+    public function visit(float $h)
     {
         if($this->property->getIsBusy()) {
             return;

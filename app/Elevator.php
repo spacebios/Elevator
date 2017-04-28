@@ -1,10 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace main\app;
 
-use main\app\elevatorState\UpState;
-use main\app\elevatorState\DownState;
-use main\app\elevatorState\StopState;
+use main\app\elevatorState\{StateInterface, UpState, DownState, StopState};
 
 /**
  * Class Elevator
@@ -83,17 +83,17 @@ class Elevator
     }
 
     /**
-     * @param $st object
+     * @param $st StateInterface
      */
-    public function setState($st)
+    public function setState(StateInterface $st)
     {
         $this->state = $st;
     }
 
     /**
-     * @return object
+     * @return StateInterface
      */
-    public function getState()
+    public function getState() : StateInterface
     {
         return $this->state;
     }
@@ -101,7 +101,7 @@ class Elevator
     /**
      * @return UpState
      */
-    public function getUpState()
+    public function getUpState() : UpState
     {
         return $this->upState;
     }
@@ -109,7 +109,7 @@ class Elevator
     /**
      * @return DownState
      */
-    public function getDownState()
+    public function getDownState() : DownState
     {
         return $this->downState;
     }
@@ -117,7 +117,7 @@ class Elevator
     /**
      * @return StopState
      */
-    public function getStopState()
+    public function getStopState() : StopState
     {
         return $this->stopState;
     }
@@ -125,7 +125,7 @@ class Elevator
     /**
      * @param $t int
      */
-    public function setMoveStartTime($t)
+    public function setMoveStartTime(int $t)
     {
         $this->moveStartTime = $t;
     }
@@ -133,7 +133,7 @@ class Elevator
     /**
      * @return int (timestamp)
      */
-    public function getMoveStartTime()
+    public function getMoveStartTime() : int
     {
        return $this->moveStartTime;
     }
@@ -141,7 +141,7 @@ class Elevator
     /**
      * @param $p float
      */
-    public function setLiftPosition($p)
+    public function setLiftPosition(float $p)
     {
         $this->liftPosition = $p;
     }
@@ -149,7 +149,7 @@ class Elevator
     /**
      * @return float
      */
-    public function getLiftPosition()
+    public function getLiftPosition() : float
     {
         return $this->liftPosition;
     }
@@ -157,7 +157,7 @@ class Elevator
     /**
      * @return float
      */
-    public function getMoveSpeed()
+    public function getMoveSpeed() : float
     {
         return $this->moveSpeed;
     }
@@ -165,7 +165,7 @@ class Elevator
     /**
      * @return float
      */
-    public function getPosition()
+    public function getPosition() : float
     {
         if($this->state == $this->upState){
             return $this->liftPosition + (time() - $this->moveStartTime) * $this->moveSpeed; //for UP state
