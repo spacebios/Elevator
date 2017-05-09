@@ -14,9 +14,11 @@ require __DIR__ . '/../vendor/autoload.php';
 $lift = new Elevator();
 $ctrl = new ElevatorController();
 $ctrl->setElevator($lift);
-$numbtn1 = new NumberButton(5, $ctrl);
-$numbtn2 = new NumberButton(9, $ctrl);
-$numbtn3 = new NumberButton(12, $ctrl);
+
+$numbtn0 = new NumberButton('street', 5, $ctrl);
+$numbtn1 = new NumberButton('1', 9, $ctrl);
+$numbtn2 = new NumberButton('2', 12, $ctrl);
+$numbtn3 = new NumberButton('3', 12, $ctrl);
 
 $numbtn1->press();
 

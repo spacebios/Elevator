@@ -14,19 +14,26 @@ class NumberButton implements ButtonInterface
 {
     /**
      * NumberButton constructor.
-     * @param float $h
-     * @param ElevatorControllerInterface $c
+     * @param string $name
+     * @param float $height
+     * @param ElevatorControllerInterface $controller
      */
-    public function __construct(float $h, ElevatorControllerInterface $c)
+    public function __construct(string $name, float $height, ElevatorControllerInterface $controller)
     {
-        $this->height = $h;
-        $this->controller = $c;
+        $this->height = $height;
+        $this->controller = $controller;
+        $this->name = $name;
     }
 
     /**
-     * @var int
+     * @var float
      */
     private $height;
+
+    /**
+     * @var string
+     */
+    private $name;
 
     /**
      * @var ElevatorControllerInterface
@@ -36,5 +43,13 @@ class NumberButton implements ButtonInterface
     public function press()
     {
         $this->controller->visit($this->height);
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 }

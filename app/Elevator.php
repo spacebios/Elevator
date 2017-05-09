@@ -11,7 +11,7 @@ use main\app\elevatorState\{StateInterface, UpState, DownState, StopState};
  * @package main\app
  */
 
-class Elevator
+class Elevator implements PlaceInterface, HumanInterface
 {
     /**
      * Elevator constructor.
@@ -204,5 +204,10 @@ class Elevator
             sleep(1);
             echo "The doors are closed \n";
         }
+    }
+
+    public function getButtons()
+    {
+        // TODO: return array with button.
     }
 }
