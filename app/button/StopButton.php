@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace main\app\button;
 
 use main\app\elevatorController\ElevatorController;
+use main\app\elevatorController\ElevatorControllerInterface;
 
 /**
  * Class StopButton
@@ -14,9 +15,9 @@ class StopButton implements ButtonInterface
 {
     /**
      * StopButton constructor.
-     * @param int $h, null as default
+     * @param ElevatorControllerInterface $c
      */
-    public function __construct($c)
+    public function __construct(ElevatorControllerInterface $c)
     {
         $this->controller = $c;
     }

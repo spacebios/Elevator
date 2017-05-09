@@ -8,10 +8,10 @@ namespace main\app\button;
 use main\app\elevatorController\ElevatorControllerInterface;
 
 /**
- * Class NumberButton
+ * Class DirectionButton
  * @package main\app\button
  */
-class NumberButton implements ButtonInterface
+class DirectionButton implements ButtonInterface
 {
     /**
      * NumberButton constructor.
@@ -27,30 +27,28 @@ class NumberButton implements ButtonInterface
     }
 
     /**
-     * @var float
-     */
-    private $height;
-
-    /**
      * @var string
      */
     private $name;
+
+    /**
+     * @var float
+     */
+    private $height;
 
     /**
      * @var ElevatorControllerInterface
      */
     private $controller;
 
-    /**
-     * @return string
-     */
-    public function getName() : string
-    {
-        return $this->name;
-    }
 
     public function press()
     {
-        $this->controller->visit($this->height);
+        // TODO: Implement press() method.
+    }
+
+    public function getName()
+    {
+        return $this->name;
     }
 }
