@@ -40,16 +40,16 @@ class NumberButton implements ButtonInterface
      */
     private $controller;
 
-    public function press()
-    {
-        $this->controller->visit($this->height);
-    }
-
     /**
      * @return string
      */
-    public function getName()
+    public function getName() : string
     {
         return $this->name;
+    }
+
+    public function press()
+    {
+        $this->controller->visit($this->height);
     }
 }

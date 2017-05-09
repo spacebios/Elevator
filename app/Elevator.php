@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace main\app;
 
 use main\app\elevatorState\{StateInterface, UpState, DownState, StopState};
+use main\app\button\ButtonInterface;
 
 /**
  * Class Elevator
@@ -65,6 +66,16 @@ class Elevator implements PlaceInterface, HumanInterface
      ***m/s***
      */
     private $moveSpeed = 1;
+
+    /**
+     * @var array
+     */
+    private $buttons;
+
+    /**
+     * @var array
+     */
+    private $buttonsNames;
 
 /*----------------------------------------Public functions------------------------------------------------------------*/
     public function up()
@@ -176,6 +187,17 @@ class Elevator implements PlaceInterface, HumanInterface
         }
     }
 
+    public function addButton(ButtonInterface $button)
+    {
+        array_push($this->buttons, $button);
+        array_push($this->buttonsNames, $button->getName());
+    }
+
+    public function getButtonsNames() : array
+    {
+        return $this->buttonsNames;
+    }
+
     public function liftLanding()
     {
         $this->makeSound(); //"ding-dong" sound when lift is already came
@@ -204,10 +226,5 @@ class Elevator implements PlaceInterface, HumanInterface
             sleep(1);
             echo "The doors are closed \n";
         }
-    }
-
-    public function getButtons()
-    {
-        // TODO: return array with button.
     }
 }

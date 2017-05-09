@@ -8,5 +8,5 @@ namespace main\app;
 
 interface HumanInterface
 {
-    public function getButtons();
+    public function getButtonsNames();
 }

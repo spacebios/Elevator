@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace main\app;
 
 
-use main\app\elevatorState\StateInterface;
-
 class Person
 {
     public function __construct(PlaceInterface $place)

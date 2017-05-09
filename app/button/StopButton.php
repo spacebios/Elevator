@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace main\app\button;
 
 use main\app\elevatorController\ElevatorController;
@@ -23,6 +25,19 @@ class StopButton implements ButtonInterface
      * @var ElevatorController
      */
     private $controller;
+
+    /**
+     * @var string
+     */
+    private $name;
+
+    /**
+     * @return string
+     */
+    public function getName() : string
+    {
+        return $this->name;
+    }
 
     public function press()
     {
