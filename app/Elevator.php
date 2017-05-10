@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace main\app;
 
+
 use main\app\elevatorState\{StateInterface, UpState, DownState, StopState};
-use main\app\button\ButtonInterface;
 
 /**
  * Class Elevator

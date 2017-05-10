@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace main\app;
 
-
+/**
+ * Class Person
+ * @package main\app
+ */
 class Person
 {
     public function __construct(PlaceInterface $place)
