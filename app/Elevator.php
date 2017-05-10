@@ -72,11 +72,6 @@ class Elevator implements PlaceInterface, HumanInterface
      */
     private $buttons;
 
-    /**
-     * @var array
-     */
-    private $buttonsNames;
-
 /*----------------------------------------Public functions------------------------------------------------------------*/
     public function up()
     {
@@ -187,20 +182,22 @@ class Elevator implements PlaceInterface, HumanInterface
         }
     }
 
-    public function addButton(ButtonInterface $button)
+    /**
+     * @param array $buttons
+     */
+    public function addButtons(array $buttons)
     {
-        array_push($this->buttons, $button);
-        array_push($this->buttonsNames, $button->getName());
+        foreach($buttons as $button){
+            array_push($this->buttons, $button);
+        }
     }
 
-    public function addNumberButtons(array $places)
+    /**
+     * @return array
+     */
+    public function getButtons() : array
     {
-
-    }
-
-    public function getButtonsNames() : array
-    {
-        return $this->buttonsNames;
+        return $this->buttons;
     }
 
     public function liftLanding()

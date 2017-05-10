@@ -5,9 +5,7 @@ declare(strict_types=1);
 namespace main\app;
 
 
-use main\app\button\ButtonInterface;
-use main\app\button\DirectionButton;
-use main\app\button\NumberButton;
+use main\app\button\{DirectionButton, NumberButton};
 use main\app\elevatorController\ElevatorControllerInterface;
 
 class Floor implements PlaceInterface, HumanInterface
@@ -34,11 +32,13 @@ class Floor implements PlaceInterface, HumanInterface
     private $buttons;
 
     /**
-     * @param ButtonInterface $button
+     * @param array $buttons
      */
-    public function addButton(ButtonInterface $button)
+    public function addButtons(array $buttons)
     {
-        array_push($this->buttons, $button);
+        foreach($buttons as $button){
+            array_push($this->buttons, $button);
+        }
     }
 
     /**
@@ -62,11 +62,11 @@ class Floor implements PlaceInterface, HumanInterface
 
     /**
      * @param ElevatorControllerInterface $controller
+     * @return NumberButton
      */
-    public function addNumberButton(ElevatorControllerInterface $controller)
+    public function createNumberButton(ElevatorControllerInterface $controller)
     {
-        $numButton = new NumberButton($controller, $name = $this->name, $height = $this->height);
-        array_push($this->buttons, $numButton);
+        return new NumberButton($controller, $name = $this->name, $height = $this->height);
     }
 
     /**
