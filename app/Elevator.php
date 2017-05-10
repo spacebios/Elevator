@@ -193,6 +193,11 @@ class Elevator implements PlaceInterface, HumanInterface
         array_push($this->buttonsNames, $button->getName());
     }
 
+    public function addNumberButtons(array $places)
+    {
+
+    }
+
     public function getButtonsNames() : array
     {
         return $this->buttonsNames;

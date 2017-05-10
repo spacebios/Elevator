@@ -19,10 +19,9 @@ class DirectionButton implements ButtonInterface
      * @param float $height
      * @param ElevatorControllerInterface $controller
      */
-    public function __construct(string $name, float $height, ElevatorControllerInterface $controller)
+    public function __construct(string $name, ElevatorControllerInterface $controller)
     {
         $this->name = $name;
-        $this->height = $height;
         $this->controller = $controller;
     }
 
@@ -47,8 +46,28 @@ class DirectionButton implements ButtonInterface
         // TODO: Implement press() method.
     }
 
+    /**
+     * @return string
+     */
     public function getName()
     {
         return $this->name;
     }
+
+    /**
+     * @param float $height
+     */
+    public function setHeight(float $height)
+    {
+        $this->height = $height;
+    }
+
+    /**
+     * @return float
+     */
+    public function getHeight() : float
+    {
+        return $this->height;
+    }
+
 }

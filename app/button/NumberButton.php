@@ -26,6 +26,8 @@ class NumberButton implements ButtonInterface
         $this->controller = $controller;
     }
 
+    private $place;
+
     /**
      * @var float
      */
