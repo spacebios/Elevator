@@ -19,7 +19,7 @@ class NumberButton implements ButtonInterface
      * @param float $height
      * @param ElevatorControllerInterface $controller
      */
-    public function __construct(string $name, float $height, ElevatorControllerInterface $controller)
+    public function __construct(ElevatorControllerInterface $controller, string $name, float $height)
     {
         $this->name = $name;
         $this->height = $height;

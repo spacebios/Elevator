@@ -7,6 +7,7 @@ namespace main\app;
 
 use main\app\button\ButtonInterface;
 use main\app\button\DirectionButton;
+use main\app\button\NumberButton;
 use main\app\elevatorController\ElevatorControllerInterface;
 
 class Floor implements PlaceInterface, HumanInterface
@@ -28,14 +29,9 @@ class Floor implements PlaceInterface, HumanInterface
     private $name;
 
     /**
-     * @var array
+     * @var array of ButtonInterface
      */
     private $buttons;
-
-    /**
-     * @var array
-     */
-    private $buttonsNames;
 
     /**
      * @param ButtonInterface $button
@@ -43,7 +39,6 @@ class Floor implements PlaceInterface, HumanInterface
     public function addButton(ButtonInterface $button)
     {
         array_push($this->buttons, $button);
-        array_push($this->buttonsNames, $button->getName());
     }
 
     /**
@@ -56,25 +51,30 @@ class Floor implements PlaceInterface, HumanInterface
     public function addDirectionButtons(ElevatorControllerInterface $controller, bool $dirUp = true, string $dirUpName = 'up', bool $dirDown = true, string $dirDownName = 'down')
     {
         if($dirUp){
-            $buttonUp = new DirectionButton($dirUpName, $controller);
-            $buttonUp -> setHeight($this->height);
+            $buttonUp = new DirectionButton($controller, $dirUpName, $this->height);
             array_push($this->buttons, $buttonUp);
-            array_push($this->buttonsNames, $buttonUp->getName());
 
         } elseif($dirDown){
-            $buttonDown = new DirectionButton($dirDownName, $controller);
-            $buttonDown -> setHeight($this->height);
+            $buttonDown = new DirectionButton($controller, $dirDownName, $this->height);
             array_push($this->buttons, $buttonDown);
-            array_push($this->buttonsNames, $buttonDown->getName());
         }
     }
 
     /**
-     * @return array
+     * @param ElevatorControllerInterface $controller
      */
-    public function getButtonsNames() : array
+    public function addNumberButton(ElevatorControllerInterface $controller)
     {
-        return $this->buttonsNames;
+        $numButton = new NumberButton($controller, $name = $this->name, $height = $this->height);
+        array_push($this->buttons, $numButton);
+    }
+
+    /**
+     * @return array of ButtonInterface
+     */
+    public function getButtons() : array
+    {
+        return $this->buttons;
     }
 
     /**
@@ -108,5 +108,4 @@ class Floor implements PlaceInterface, HumanInterface
     {
         $this->height = $height;
     }
-
 }
