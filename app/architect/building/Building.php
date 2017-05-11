@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace main\app\architector;
+namespace main\app\architect\building;
 
 /**
  * Class Building

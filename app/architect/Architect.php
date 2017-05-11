@@ -2,14 +2,17 @@
 
 declare(strict_types=1);
 
-namespace main\app\architector;
+namespace main\app\architect;
+
+
 use main\app\button\StopButton;
+use main\app\architect\building\BuildingBuilder;
 
 /**
- * Class Architector
- * @package main\app\architector
+ * Class Architect
+ * @package main\app\architect
  */
-class Architector
+class Architect
 {
     public function construct()
     {
