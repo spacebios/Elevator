@@ -7,39 +7,13 @@ error_reporting(E_ALL);
 use \main\app\button\NumberButton;
 use \main\app\Elevator;
 use \main\app\elevatorController\ElevatorController;
+use \main\app\architector\BuildingBuilder;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-
-$lift = new Elevator();
-$ctrl = new ElevatorController();
-$ctrl->setElevator($lift);
-
-$numbtn0 = new NumberButton('street', 0, $ctrl);
-$numbtn1 = new NumberButton('1', 2, $ctrl);
-$numbtn2 = new NumberButton('2', 4, $ctrl);
-$numbtn3 = new NumberButton('3', 6, $ctrl);
-
-$numbtn1->press();
-
-$numbtn3->press();
-
-$numbtn2->press();
-
-//
-//$ctrl->visit(6);
-//
-//echo $lift->getPosition() . "\n";
-//
-//
-//$lift->up();
-//
-//echo $lift->getPosition() . "\n";
-//sleep(2);
-//
-//echo $lift->getPosition() . "\n";
-//
-//$lift->down();
-//
-//sleep(4);
-//echo $lift->getPosition() . "\n";
+$building = (new BuildingBuilder())->addElevator()->addController();
+$building->addFloor(0, 0);
+$building->addFloor(1, 2);
+$building->addFloor(2, 4);
+$building->addFloor(3, 6);
+$building->addFloor(4, 8);

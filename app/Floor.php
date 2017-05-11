@@ -8,6 +8,10 @@ namespace main\app;
 use main\app\button\{DirectionButton, NumberButton};
 use main\app\elevatorController\ElevatorControllerInterface;
 
+/**
+ * Class Floor
+ * @package main\app
+ */
 class Floor implements PlaceInterface, HumanInterface
 {
     public function __construct(string $name, float $height)
@@ -47,6 +51,7 @@ class Floor implements PlaceInterface, HumanInterface
      * @param string $dirUpName
      * @param bool $dirDown
      * @param string $dirDownName
+     * @return $this
      */
     public function addDirectionButtons(ElevatorControllerInterface $controller, bool $dirUp = true, string $dirUpName = 'up', bool $dirDown = true, string $dirDownName = 'down')
     {
@@ -58,6 +63,7 @@ class Floor implements PlaceInterface, HumanInterface
             $buttonDown = new DirectionButton($controller, $dirDownName, $this->height);
             array_push($this->buttons, $buttonDown);
         }
+        return $this;
     }
 
     /**
