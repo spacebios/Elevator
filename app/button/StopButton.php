@@ -17,9 +17,10 @@ class StopButton implements ButtonInterface
      * StopButton constructor.
      * @param ElevatorControllerInterface $c
      */
-    public function __construct(ElevatorControllerInterface $c)
+    public function __construct(ElevatorControllerInterface $c, $name = 'stop')
     {
         $this->controller = $c;
+        $this->name = $name;
     }
 
     /**

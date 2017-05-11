@@ -6,6 +6,7 @@ namespace main\app;
 
 
 use main\app\elevatorState\{StateInterface, UpState, DownState, StopState};
+use main\app\button\ButtonInterface;
 
 /**
  * Class Elevator
@@ -190,6 +191,14 @@ class Elevator implements PlaceInterface, HumanInterface
         foreach($buttons as $button){
             array_push($this->buttons, $button);
         }
+    }
+
+    /**
+     * @param ButtonInterface $button
+     */
+    public function addButton(ButtonInterface $button)
+    {
+        array_push($this->buttons, $button);
     }
 
     /**
