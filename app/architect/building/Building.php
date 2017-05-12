@@ -10,6 +10,10 @@ namespace main\app\architect\building;
  */
 class Building
 {
+    /**
+     * Building constructor.
+     * @param BuildingBuilder $builder
+     */
     public function __construct(BuildingBuilder $builder)
     {
         $this->floors = $builder->floors;

@@ -189,7 +189,11 @@ class Elevator implements PlaceInterface, HumanInterface
     public function addButtons(array $buttons)
     {
         foreach($buttons as $button){
-            array_push($this->buttons, $button);
+            if ($button instanceof ButtonInterface){
+                if(!isset($this->buttons[$button->getName()])){
+                    $this->buttons[$button->getName()] = $button;
+                }
+            }
         }
     }
 
@@ -198,7 +202,9 @@ class Elevator implements PlaceInterface, HumanInterface
      */
     public function addButton(ButtonInterface $button)
     {
-        array_push($this->buttons, $button);
+        if(!isset($this->buttons[$button->getName()])){
+            $this->buttons[$button->getName()] = $button;
+        }
     }
 
     /**

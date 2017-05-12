@@ -6,6 +6,7 @@ namespace main\app;
 
 
 use main\app\button\{DirectionButton, NumberButton};
+use main\app\button\ButtonInterface;
 use main\app\elevatorController\ElevatorControllerInterface;
 
 /**
@@ -14,6 +15,11 @@ use main\app\elevatorController\ElevatorControllerInterface;
  */
 class Floor implements PlaceInterface, HumanInterface
 {
+    /**
+     * Floor constructor.
+     * @param string $name
+     * @param float $height
+     */
     public function __construct(string $name, float $height)
     {
         $this->height = $height;
@@ -41,7 +47,21 @@ class Floor implements PlaceInterface, HumanInterface
     public function addButtons(array $buttons)
     {
         foreach($buttons as $button){
-            array_push($this->buttons, $button);
+            if ($button instanceof ButtonInterface){
+                if(!isset($this->buttons[$button->getName()])){
+                    $this->buttons[$button->getName()] = $button;
+                }
+            }
+        }
+    }
+
+    /**
+     * @param ButtonInterface $button
+     */
+    public function addButton(ButtonInterface $button)
+    {
+        if(!isset($this->buttons[$button->getName()])){
+            $this->buttons[$button->getName()] = $button;
         }
     }
 
@@ -57,11 +77,14 @@ class Floor implements PlaceInterface, HumanInterface
     {
         if($dirUp){
             $buttonUp = new DirectionButton($controller, $dirUpName, $this->height);
-            array_push($this->buttons, $buttonUp);
-
+            if(!isset($this->buttons[$dirUpName])) {
+                $this->buttons[$dirUpName] = $buttonUp;
+            }
         } elseif($dirDown){
             $buttonDown = new DirectionButton($controller, $dirDownName, $this->height);
-            array_push($this->buttons, $buttonDown);
+            if(!isset($this->buttons[$dirDownName])) {
+                $this->buttons[$dirDownName] = $buttonDown;
+            }
         }
         return $this;
     }

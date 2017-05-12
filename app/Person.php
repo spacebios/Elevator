@@ -10,15 +10,26 @@ namespace main\app;
  */
 class Person
 {
-    public function __construct(PlaceInterface $place)
+    /**
+     * Person constructor.
+     * @param PlaceInterface $place
+     * @param string $destination
+     */
+    public function __construct(PlaceInterface $place, string $destination)
     {
         $this->place = $place;
+        $this->destination = $destination;
     }
 
     /**
      * @var PlaceInterface
      */
     private $place;
+
+    /**
+     * @var string
+     */
+    private $destination;
 
     /**
      * @return PlaceInterface
@@ -34,5 +45,21 @@ class Person
     public function setPlace(PlaceInterface $place)
     {
         $this->place = $place;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDestination() : string
+    {
+        return $this->destination;
+    }
+
+    /**
+     * @param string $destination
+     */
+    public function setDestination(string $destination)
+    {
+        $this->destination = $destination;
     }
 }
