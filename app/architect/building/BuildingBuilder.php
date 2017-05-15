@@ -28,19 +28,19 @@ class BuildingBuilder
      * @param string $name
      * @param float $height
      * @return $this
+     * @throws \Exception
      */
     public function addFloor(string $name, float $height)
     {
-        if($this->controller instanceof ElevatorController){
-
-            $floor = (new Floor($name, $height))->addDirectionButtons($this->controller);
-            array_push($this->floors, $floor);
-            array_push($this->numberButtons, $floor->createNumberButton($this->controller));
-            return $this;
-        }else{
-            echo "You should add controller first";
-            return $this;
+        if(!$this->controller instanceof ElevatorController) {
+            throw new \Exception("You should add controller first");
         }
+
+        $floor = (new Floor($name, $height))->addDirectionButtons($this->controller);
+        array_push($this->floors, $floor);
+        array_push($this->numberButtons, $floor->createNumberButton($this->controller));
+
+        return $this;
     }
 
     public function addController()

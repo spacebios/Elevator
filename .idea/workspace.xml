@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="77851146-282b-471c-9b5a-01889a35eccd" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Elevator.php" afterPath="$PROJECT_DIR$/app/Elevator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Floor.php" afterPath="$PROJECT_DIR$/app/Floor.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Person.php" afterPath="$PROJECT_DIR$/app/Person.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/architect/Architect.php" afterPath="$PROJECT_DIR$/app/architect/Architect.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/architect/building/Building.php" afterPath="$PROJECT_DIR$/app/architect/building/Building.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/architect/building/BuildingBuilder.php" afterPath="$PROJECT_DIR$/app/architect/building/BuildingBuilder.php" />
     </list>
     <ignored path="Elevator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,8 +29,8 @@
       <file leaf-file-name="Elevator.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Elevator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.090909">
-              <caret line="62" column="30" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
+            <state vertical-scroll-proportion="-11.153846">
+              <caret line="138" column="0" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
               <folding>
                 <element signature="e#55#130#0#PHP" expanded="true" />
               </folding>
@@ -41,10 +38,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="StopState.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/elevatorState/StopState.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Floor.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Floor.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="19.807692">
+            <state vertical-scroll-proportion="-43.153847">
               <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
               <folding>
                 <element signature="e#55#107#0#PHP" expanded="true" />
@@ -56,7 +63,7 @@
       <file leaf-file-name="DirectionButton.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/button/DirectionButton.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="8.5">
+            <state vertical-scroll-proportion="-1.3076923">
               <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
               <folding />
             </state>
@@ -73,11 +80,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Person.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Person.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.65384614">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Architect.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/architect/Architect.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.461538">
-              <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+            <state vertical-scroll-proportion="-14.384615">
+              <caret line="22" column="108" selection-start-line="22" selection-start-column="108" selection-end-line="22" selection-end-column="108" />
               <folding>
                 <element signature="e#65#96#0#PHP" expanded="true" />
               </folding>
@@ -85,21 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Person.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Person.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15821256">
-              <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BuildingBuilder.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BuildingBuilder.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/architect/building/BuildingBuilder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.6153846">
-              <caret line="4" column="37" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.4311594">
+              <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
               <folding>
                 <element signature="e#74#96#0#PHP" expanded="true" />
               </folding>
@@ -110,7 +117,7 @@
       <file leaf-file-name="Building.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/architect/building/Building.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.5">
+            <state vertical-scroll-proportion="0.0">
               <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
               <folding />
             </state>
@@ -120,18 +127,8 @@
       <file leaf-file-name="StopButton.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/button/StopButton.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.0384617">
+            <state vertical-scroll-proportion="0.0">
               <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestCase.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/architect/testCase/TestCase.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3076923">
-              <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -188,14 +185,14 @@
         <option value="$PROJECT_DIR$/app/architector/Architector.php" />
         <option value="$PROJECT_DIR$/app/architector/building/Building.php" />
         <option value="$PROJECT_DIR$/app/architector/building/BuildingBuilder.php" />
-        <option value="$PROJECT_DIR$/app/architect/building/BuildingBuilder.php" />
         <option value="$PROJECT_DIR$/app/architect/Architector.php" />
         <option value="$PROJECT_DIR$/web/index.php" />
-        <option value="$PROJECT_DIR$/app/architect/Architect.php" />
         <option value="$PROJECT_DIR$/app/Person.php" />
         <option value="$PROJECT_DIR$/app/architect/building/Building.php" />
         <option value="$PROJECT_DIR$/app/Elevator.php" />
         <option value="$PROJECT_DIR$/app/Floor.php" />
+        <option value="$PROJECT_DIR$/app/architect/Architect.php" />
+        <option value="$PROJECT_DIR$/app/architect/building/BuildingBuilder.php" />
       </list>
     </option>
   </component>
@@ -255,7 +252,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -420,7 +417,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -638,7 +635,13 @@
       <option name="project" value="LOCAL" />
       <updated>1494520688380</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Person interface changes">
+      <created>1494582392235</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1494582392235</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -658,7 +661,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18923241" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15938166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -702,7 +705,8 @@
     <MESSAGE value="strict type and php 7 syntax" />
     <MESSAGE value="add new entitys" />
     <MESSAGE value="add architecor" />
-    <option name="LAST_COMMIT_MESSAGE" value="add architecor" />
+    <MESSAGE value="Person interface changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Person interface changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1009,19 +1013,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/elevatorState/StopState.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35386473">
-          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/architect/testCase/TestCaseBuilder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1029,7 +1024,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.153846">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1037,13 +1031,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.3076923">
           <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/button/StopButton.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0384617">
+        <state vertical-scroll-proportion="0.0">
           <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
           <folding />
         </state>
@@ -1051,29 +1044,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/architect/building/Building.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.5">
+        <state vertical-scroll-proportion="0.0">
           <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/architect/building/BuildingBuilder.php">
+    <entry file="file://$PROJECT_DIR$/app/elevatorState/StopState.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6153846">
-          <caret line="4" column="37" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Elevator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.153846">
+          <caret line="138" column="0" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
           <folding>
-            <element signature="e#74#96#0#PHP" expanded="true" />
+            <element signature="e#55#130#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/architect/Architect.php">
+    <entry file="file://$PROJECT_DIR$/app/Floor.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538">
-          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+        <state vertical-scroll-proportion="-43.153847">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding>
-            <element signature="e#65#96#0#PHP" expanded="true" />
+            <element signature="e#55#107#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/button/DirectionButton.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1085,39 +1094,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/button/DirectionButton.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="8.5">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Floor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="19.807692">
-          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding>
-            <element signature="e#55#107#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Elevator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.090909">
-          <caret line="62" column="30" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
-          <folding>
-            <element signature="e#55#130#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Person.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15821256">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/architect/Architect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.384615">
+          <caret line="22" column="108" selection-start-line="22" selection-start-column="108" selection-end-line="22" selection-end-column="108" />
+          <folding>
+            <element signature="e#65#96#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/architect/building/BuildingBuilder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4311594">
+          <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
+          <folding>
+            <element signature="e#74#96#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
