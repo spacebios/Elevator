@@ -22,18 +22,23 @@ class ElevatorController implements ElevatorControllerInterface
      */
     private $property;
 
+    /*
+     * @var array
+     */
+    private $tasks;
+
     /**
      * @return Elevator
      */
-    public function getElevator()
+    public function getElevator() : Elevator
     {
         return $this->elev;
     }
 
     /**
-     * @param $e Elevator
+     * @param Elevator $e
      */
-    public function setElevator($e)
+    public function setElevator(Elevator $e)
     {
         $this->elev = $e;
         $this->property = new ElevatorControllerProperty();
@@ -48,7 +53,7 @@ class ElevatorController implements ElevatorControllerInterface
             return;
         }
 
-        echo 'Elevator is on heigt: ' . $this->elev->getLiftPosition() . "\n";
+        echo 'Elevator is on height: ' . $this->elev->getLiftPosition() . "\n";
         $this->property->setIsBusy(true); //set status 'busy'
 
         if($this->elev->getPosition() < $h){
@@ -71,5 +76,10 @@ class ElevatorController implements ElevatorControllerInterface
     public function stop()
     {
         $this->elev->stop();
+    }
+
+    public function addTask(float $task)
+    {
+        array_push($this->tasks, $task);
     }
 }

@@ -205,6 +205,13 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="vamovers">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="vamovers.com">
         <serverdata>
           <mappings>

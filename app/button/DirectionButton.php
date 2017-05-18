@@ -44,7 +44,7 @@ class DirectionButton implements ButtonInterface
 
     public function press()
     {
-        // TODO: Implement press() method.
+        $this->controller->addTask($this->height);
     }
 
     /**
