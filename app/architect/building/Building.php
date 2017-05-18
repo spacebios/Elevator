@@ -16,10 +16,11 @@ class Building
      */
     public function __construct(BuildingBuilder $builder)
     {
-        $this->floors = $builder->floors;
-        $this->elevator = $builder->elevator;
-        $this->controller = $builder->controller;
-        $this->numberButtons = $builder->numberButtons;
+        $this->floors = $builder->getFloors();
+        $this->elevator = $builder->getElevator();
+        $this->controller = $builder->getController();
+        $this->numberButtons = $builder->getNumberButtons();
+        $this->persons = $builder->getPersons();
     }
 
     private $floors;
@@ -29,4 +30,6 @@ class Building
     private $controller;
 
     private $numberButtons;
+
+    private $persons;
 }

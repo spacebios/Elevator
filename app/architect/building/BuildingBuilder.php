@@ -5,10 +5,12 @@ declare(strict_types=1);
 namespace main\app\architect\building;
 
 
+use main\app\button\ButtonInterface;
 use main\app\Elevator;
 use main\app\elevatorController\ElevatorController;
 use main\app\elevatorController\ElevatorControllerInterface;
 use main\app\Floor;
+use main\app\Person;
 
 /**
  * Class BuildingBuilder
@@ -16,13 +18,15 @@ use main\app\Floor;
  */
 class BuildingBuilder
 {
-    public $floors;
+    private $floors;
 
-    public $elevator;
+    private $elevator;
 
-    public $controller;
+    private $controller;
 
-    public $numberButtons;
+    private $numberButtons;
+
+    private $persons;
 
     /**
      * @param string $name
@@ -39,6 +43,45 @@ class BuildingBuilder
         $floor = (new Floor($name, $height))->addDirectionButtons($this->controller);
         array_push($this->floors, $floor);
         array_push($this->numberButtons, $floor->createNumberButton($this->controller));
+
+        return $this;
+    }
+
+    public function addPerson(string $floor, string $destination)
+    {
+        $floorExist = false;
+        $destinationCanBeReached = false;
+
+        foreach($this->floors as $f){
+            if($f instanceof Floor){
+                if($floor === $f->getName()){
+
+                    $person = new Person($f, $destination);
+
+                    foreach($person->getAvailableButtons() as $button){
+                        if($button instanceof ButtonInterface){
+                            if($destination === $button->getName()){
+                                $button->press();
+                                $destinationCanBeReached = true;
+                                break;
+                            }
+                        }
+                    }
+
+                    if (!$destinationCanBeReached){
+                        throw new \Exception('Destination ' . $destination . ' can`t be rached, such floor does not exist');
+                    }
+
+                    array_push($this->persons, new Person($f, $destination));
+                    $floorExist = true;
+                    break;
+                }
+            }
+        }
+
+        if (!$floorExist){
+            throw new \Exception('Floor ' . $floor . ' does not exist');
+        }
 
         return $this;
     }
@@ -95,5 +138,10 @@ class BuildingBuilder
     public function getNumberButtons() : array
     {
         return $this->numberButtons;
+    }
+
+    public function getPersons() : array
+    {
+        return $this->persons;
     }
 }

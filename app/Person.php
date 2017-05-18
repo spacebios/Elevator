@@ -19,6 +19,10 @@ class Person
     {
         $this->place = $place;
         $this->destination = $destination;
+
+        if($place instanceof HumanInterface){
+            $this->availableButtons = $place->getButtons();
+        }
     }
 
     /**
@@ -30,6 +34,11 @@ class Person
      * @var string
      */
     private $destination;
+
+    /**
+     * @var array
+     */
+    private $availableButtons;
 
     /**
      * @return PlaceInterface
@@ -61,5 +70,13 @@ class Person
     public function setDestination(string $destination)
     {
         $this->destination = $destination;
+    }
+
+    /**
+     * @return array
+     */
+    public function getAvailableButtons() : array
+    {
+        return $this->availableButtons;
     }
 }
