@@ -1,0 +1,12 @@
+{
+    "time_to_keep_data_after_process": 86400,
+    "check_status": {
+        "interval_for_check_after_real_process_time": 900,
+        "max_parallel_applications": 10,
+        "max_entities_in_application": 1000
+    },
+    "retrieve_data": {
+        "max_attempts": 3,
+        "repeat_interval": 300
+    }
+}

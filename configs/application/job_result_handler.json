@@ -1,0 +1,4 @@
+{
+    "min_cycle_interval": 5,
+    "max_parallel_handling_processes": 10
+}

@@ -1,0 +1,10 @@
+{
+    "logger": {
+        "streams": [
+            "M2ePro\\Framework\\Logger\\Stream\\Mongo"
+        ]
+    },
+    "daemons": {
+        "memory_limit": 134217728
+    }
+}

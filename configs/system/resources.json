@@ -1,0 +1,40 @@
+{
+    "database": {
+        "mysql": {
+            "host": "#LOCAL_VALUE#",
+            "port": 3306,
+            "user": "#LOCAL_VALUE#",
+            "password": "#LOCAL_VALUE#",
+            "db_name": "#LOCAL_VALUE#"
+        },
+        "mongo": {
+            "host": "#LOCAL_VALUE#",
+            "port": 27017,
+            "db_name": "#LOCAL_VALUE#",
+            "auth": {
+                "is_enabled": false,
+                "db_name": "#LOCAL_VALUE#",
+                "user": "#LOCAL_VALUE#",
+                "password": "#LOCAL_VALUE#"
+            }
+        }
+    },
+    "cache": {
+        "storage": {
+            "type": "file",
+            "file": {
+                "directory_level_deep": 1
+            }
+        },
+        "prefix": "cache"
+    },
+    "monitoring": {
+        "push": {
+            "sender": {
+                "server": "#LOCAL_VALUE#",
+                "port": 10051,
+                "self_host_name": "#LOCAL_VALUE#"
+            }
+        }
+    }
+}

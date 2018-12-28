@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<ruleset name="v1">
+    <description>Application Skeleton tasks</description>
+
+    <task ref="./Tasks/ExecutedCodeHashGenerator.php"/>
+
+
+</ruleset>

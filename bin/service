@@ -1,0 +1,28 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * @author     M2E LTD Developers Team
+ * @copyright  2011-2018 M2E LTD
+ * @license    Any usage is forbidden
+ */
+
+declare(strict_types=1);
+
+// ########################################
+
+$rootPath = rtrim(dirname(__DIR__), '/\\') . '/';
+
+require $rootPath . 'vendor/autoload.php';
+
+try {
+    $bootstrap = new \M2ePro\Application\Core\Bootstrap($rootPath, true);
+    $bootstrap->initialize();
+} catch (\Throwable $e) {
+    exit("Unable to initialize bootstrap. {$e->getMessage()}");
+}
+
+$params = $bootstrap->getDi()->obtain(\M2ePro\Library\Environment\Php\CliParams::class);
+
+$bootstrap->getDi()->create(\M2ePro\Application\Core\Application\Launcher\Primary::class, ['ignore_maintenance' => true])
+          ->process(\M2ePro\Application\Core\Console\Service\Application::class, $params->getOptions());

@@ -1,0 +1,6 @@
+{
+    "time_to_keep_data_after_process": 86400,
+    "expiration": {
+        "time_to_complete_record_over_max_processing_date": 600
+    }
+}

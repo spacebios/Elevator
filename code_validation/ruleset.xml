@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!--
+  ~ @author     M2E LTD Developers Team
+  ~ @copyright  2011-2018 M2E LTD
+  ~ @license    Any usage is forbidden
+  -->
+
+<ruleset name="PHP_CodeSniffer">
+    <description>The coding standard for PHP_CodeSniffer.</description>
+</ruleset>

@@ -1,0 +1,55 @@
+{
+    "name": "m2epro/application_skeleton",
+    "type": "m2epro-skeleton",
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.2",
+        "m2epro/library": "dev-develop",
+        "m2epro/framework": "dev-develop",
+        "m2epro/rabbitmq_lib": "dev-develop",
+        "m2epro/gearman_lib": "dev-develop",
+        "m2epro/ms_connector": "dev-develop",
+        "m2epro/application_core": "dev-develop"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "3.*",
+        "phpunit/phpunit" : "^5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Project\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Project\\Tests\\": "tests/"
+        }
+    },
+
+    "repositories": [
+        {
+            "type": "svn",
+            "url": "https://development-vcs.m2edev.com/svn/library/"
+        },
+        {
+            "type": "svn",
+            "url": "https://development-vcs.m2edev.com/svn/framework/"
+        },
+        {
+            "type": "svn",
+            "url": "https://development-vcs.m2edev.com/svn/rabbitmq_lib/"
+        },
+        {
+            "type": "svn",
+            "url": "https://development-vcs.m2edev.com/svn/gearman_lib/"
+        },
+        {
+            "type": "svn",
+            "url": "https://development-vcs.m2edev.com/svn/ms_connector/"
+        },
+        {
+            "type": "svn",
+            "url": "https://development-vcs.m2edev.com/svn/application_core/"
+        }
+    ]
+}

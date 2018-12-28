@@ -1,0 +1,5 @@
+{
+    "min_cycle_interval_in_idle_mode": 1,
+    "is_auto_acknowledge_enabled": false,
+    "bus": {}
+}

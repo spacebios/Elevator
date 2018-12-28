@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<ruleset name="v1">
+    <description>Custom standard.</description>
+
+    <autoload ref="Autoload/autoload.php"/>
+
+    <rule ref="./Sniffer/Metadata/Application/Autoload.php"/>
+    <rule ref="./Sniffer/Metadata/Config/Project.php"/>
+    <rule ref="./Sniffer/Metadata/Console.php"/>
+    <rule ref="./Sniffer/Metadata/Cron.php"/>
+    <rule ref="./Sniffer/Metadata/EventsManagement.php"/>
+    <rule ref="./Sniffer/Metadata/Monitoring.php"/>
+    <rule ref="./Sniffer/Metadata/ProjectInfo.php"/>
+    <rule ref="./Sniffer/Bootstrap.php"/>
+    <rule ref="./Sniffer/LayerInfo.php"/>
+
+</ruleset>
