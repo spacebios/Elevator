@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace main\app\architect\building;
 
-
 use main\app\button\ButtonInterface;
 use main\app\Elevator;
 use main\app\elevatorController\ElevatorController;
@@ -12,10 +11,6 @@ use main\app\elevatorController\ElevatorControllerInterface;
 use main\app\Floor;
 use main\app\Person;
 
-/**
- * Class BuildingBuilder
- * @package main\app\architector
- */
 class BuildingBuilder
 {
     private $floors;
@@ -28,12 +23,6 @@ class BuildingBuilder
 
     private $persons;
 
-    /**
-     * @param string $name
-     * @param float $height
-     * @return $this
-     * @throws \Exception
-     */
     public function addFloor(string $name, float $height)
     {
         if(!$this->controller instanceof ElevatorController) {
